@@ -137,37 +137,37 @@ class Board:
         location = location.lower()
         try:
             if direction.upper() in east:
-                assert (self.nodes[location[0] + str(int(location[1]) + size - 1)])
-                for i in range(int(location[1]), int(location[1]) + size):
+                assert (self.nodes[location[0] + str(int(location[1:]) + size - 1)])
+                for i in range(int(location[1:]), int(location[1:]) + size):
                     assert (self.nodes[location[0] + str(i)].is_ship is False)
-                for i in range(int(location[1]), int(location[1]) + size):
+                for i in range(int(location[1:]), int(location[1:]) + size):
                     self.nodes[location[0] + str(i)].is_ship = True
                     ship.append(location[0] + str(i))
             elif direction.upper() in west:
-                assert (self.nodes[location[0] + str(int(location[1]) - size + 1)])
-                for i in range(int(location[1]) - size + 1, int(location[1]) + 1):
+                assert (self.nodes[location[0] + str(int(location[1:]) - size + 1)])
+                for i in range(int(location[1:]) - size + 1, int(location[1:]) + 1):
                     assert (self.nodes[location[0] + str(i)].is_ship is False)
-                for i in range(int(location[1]) - size + 1, int(location[1]) + 1):
+                for i in range(int(location[1:]) - size + 1, int(location[1:]) + 1):
                     self.nodes[location[0] + str(i)].is_ship = True
                     ship.append(location[0] + str(i))
             elif direction.upper() in north:
                 length = ntl[ltn[location[0]] - size + 1]
                 assert (ltn[location[0]] - size + 1 > 0)
-                assert (self.nodes[length + location[1]])
+                assert (self.nodes[length + location[1:]])
                 for i in range(size):
-                    assert (self.nodes[ntl[ltn[location[0]] - i] + location[1]].is_ship is False)
+                    assert (self.nodes[ntl[ltn[location[0]] - i] + location[1:]].is_ship is False)
                 for i in range(size):
-                    self.nodes[ntl[ltn[location[0]] - i] + location[1]].is_ship = True
-                    ship.append(ntl[ltn[location[0]] - i] + location[1])
+                    self.nodes[ntl[ltn[location[0]] - i] + location[1:]].is_ship = True
+                    ship.append(ntl[ltn[location[0]] - i] + location[1:])
             elif direction.upper() in south:
                 length = ntl[ltn[location[0]] + size - 1]
                 assert (ltn[location[0]] + size - 1 < 11)
-                assert (self.nodes[length + location[1]])
+                assert (self.nodes[length + location[1:]])
                 for i in range(size):
-                    assert (self.nodes[ntl[ltn[location[0]] + i] + location[1]].is_ship is False)
+                    assert (self.nodes[ntl[ltn[location[0]] + i] + location[1:]].is_ship is False)
                 for i in range(size):
-                    self.nodes[ntl[ltn[location[0]] + i] + location[1]].is_ship = True
-                    ship.append(ntl[ltn[location[0]] + i] + location[1])
+                    self.nodes[ntl[ltn[location[0]] + i] + location[1:]].is_ship = True
+                    ship.append(ntl[ltn[location[0]] + i] + location[1:])
             else:
                 assert False
             self.ships.append((ship, name))

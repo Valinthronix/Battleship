@@ -70,6 +70,7 @@ while True:
     again = handle(["Do you want to play again?"], "Say yes or no.",
                    precondition=lambda x: True if x.lower() in yes else False)[1][0].lower()
     if again:
-        pass
+        player1 = HumanPlayer()
     else:
         break
+    
