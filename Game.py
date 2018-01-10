@@ -1,6 +1,11 @@
-from Gameboard import Board
+"""Game Running code
+
+This module contains the main loop that runs the game, handling the turn taking system and choosing to play against
+a computer or another human. The clear() method prints 100 blank lines, used to clear the screen.
+"""
+
 from Player import *
-from copy import deepcopy as cpy
+
 
 human = ["human", "person", "yes", "0"]
 computer = ["computer", "ai", "cpu", "bot", "no", "1"]
@@ -43,14 +48,6 @@ while True:
         player2.setup()
         raw_input("It is your turn to place ships. Press Enter to continue")
         player1.setup()
-        # player1.board.put_ship(3,'a1','s','Cruiser')
-        # player1.board.put_ship(4,'a2','s','Battleship')
-        # player1.board.put_ship(2,'a3','s','Destroyer')
-        # player1.board.put_ship(5,'a4','s','Carrier')
-        # player1.board.put_ship(3,'a5','s','Submarine')
-        # player1.board.nodes['c2'].hit()
-        # player2.target = 'c2'
-        # player2.mode = 'pinpoint'
         while True:
             clear()
             raw_input("It is your turn. Press Enter to continue")
