@@ -315,7 +315,7 @@ class ComputerPlayer(Player):
                         self.target_direction = directions[(directions.index(self.target_direction) + 2) % 4]
                         self.has_flipped = True
 
-
+# Code used to test AI and debug
 # d = []
 # for i in range(50):
 #     a = ComputerPlayer()
